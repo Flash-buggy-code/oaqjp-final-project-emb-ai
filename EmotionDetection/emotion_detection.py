@@ -17,10 +17,10 @@ def emotion_detector(text_to_analyze):
     #Format the output to list the emotions
     formatted_response=json.loads(response.text)
     emotions = formatted_response["emotionPredictions"][0]['emotion']
-
+    
     #Identify the emotion with maximum value and add it to the dictionary
     max_emotion = max(emotions, key=emotions.get)
     emotions["dominant_emotion"] = max_emotion
 
     #output
-    print(json.dumps(emotions, indent=0))
+    return (emotions)
